@@ -1,0 +1,210 @@
+<?xml version="1.0" ?>
+<robot name="yieldbotvf" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find yieldbotvf_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find yieldbotvf_description)/urdf/yieldbotvf.trans" />
+<xacro:include filename="$(find yieldbotvf_description)/urdf/yieldbotvf.gazebo" />
+<!--<xacro:include filename="$(find yieldbotvf_description)/urdf/gazebo_control.xacro" />-->
+<xacro:include filename="$(find yieldbotvf_description)/urdf/ros2_control.xacro" />
+<xacro:include filename="$(find yieldbotvf_description)/urdf/lidar.xacro" />
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.06645340709536898 -0.0443735531813499 0.16081823359659522" rpy="0 0 0"/>
+    <mass value="34.72387801597304"/>
+    <inertia ixx="0.326956" iyy="0.416446" izz="0.400568" ixy="-3.1e-05" iyz="0.0" ixz="4.1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find yieldbotvf_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find yieldbotvf_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roue_avd_1">
+  <inertial>
+    <origin xyz="-4.736948390204887e-07 -0.007596076970803334 1.7481683353692823e-07" rpy="0 0 0"/>
+    <mass value="1.1087901486283622"/>
+    <inertia ixx="0.001541" iyy="0.002549" izz="0.001541" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.231408 0.201374 -0.068038" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find yieldbotvf_description)/meshes/roue_avd_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black">
+        <color rgba="0 0 0 1"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.231408 0.201374 -0.068038" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find yieldbotvf_description)/meshes/roue_avd_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roue_arg_1">
+  <inertial>
+    <origin xyz="-3.138027010879396e-07 0.007596968013499586 -3.939244253015062e-08" rpy="0 0 0"/>
+    <mass value="1.1087890246341048"/>
+    <inertia ixx="0.001541" iyy="0.002549" izz="0.001541" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.09861 -0.112626 -0.068278" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find yieldbotvf_description)/meshes/roue_arg_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black">
+        <color rgba="0 0 0 1"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="0.09861 -0.112626 -0.068278" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find yieldbotvf_description)/meshes/roue_arg_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roue_ard_1">
+  <inertial>
+    <origin xyz="4.829659986105295e-07 -0.007596073622457733 -2.0892536410632712e-07" rpy="0 0 0"/>
+    <mass value="1.1087890246340713"/>
+    <inertia ixx="0.001541" iyy="0.002549" izz="0.001541" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.098764 0.201374 -0.067791" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find yieldbotvf_description)/meshes/roue_ard_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black">
+        <color rgba="0 0 0 1"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="0.098764 0.201374 -0.067791" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find yieldbotvf_description)/meshes/roue_ard_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roue_avg_1">
+  <inertial>
+    <origin xyz="2.722588726966624e-07 0.007596960497490313 -7.69551199153451e-09" rpy="0 0 0"/>
+    <mass value="1.1087963880901248"/>
+    <inertia ixx="0.001541" iyy="0.002549" izz="0.001541" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.231648 -0.112626 -0.067462" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find yieldbotvf_description)/meshes/roue_avg_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black">
+        <color rgba="0 0 0 1"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.231648 -0.112626 -0.067462" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find yieldbotvf_description)/meshes/roue_avg_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="-2.702674867793853e-07 4.4720077497367727e-07 0.009999999999999537" rpy="0 0 0"/>
+    <mass value="0.11097676048805943"/>
+    <inertia ixx="1e-05" iyy="1e-05" izz="1.2e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.126446 0.044374 -0.2085" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find yieldbotvf_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="red">
+       <color rgba="1 0 0 1"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.126446 0.044374 -0.2085" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find yieldbotvf_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_1">
+  <inertial>
+    <origin xyz="-2.7026748668224077e-07 4.472007749667384e-07 0.009999999999999898" rpy="0 0 0"/>
+    <mass value="0.14129999999999998"/>
+    <inertia ixx="7e-06" iyy="4.7e-05" izz="4.5e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.066446 0.044374 -0.6985" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find yieldbotvf_description)/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="blue">
+        <color rgba="0.2 0.2 1 1"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.066446 0.044374 -0.6985" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find yieldbotvf_description)/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="linkavd" type="continuous">
+  <origin xyz="0.231408 -0.201374 0.068038" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="roue_avd_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="linkarg" type="continuous">
+  <origin xyz="-0.09861 0.112626 0.068278" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="roue_arg_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="linkard" type="continuous">
+  <origin xyz="-0.098764 -0.201374 0.067791" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="roue_ard_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="linkavg" type="continuous">
+  <origin xyz="0.231648 0.112626 0.067462" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="roue_avg_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="linklidar" type="fixed">
+  <origin xyz="0.126446 -0.044374 0.2085" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="linkcam" type="fixed">
+  <origin xyz="0.066446 -0.044374 0.6985" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="camera_1"/>
+</joint>
+
+</robot>

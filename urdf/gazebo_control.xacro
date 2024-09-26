@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<robot name="yieldbotvf" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Premier plugin diff_drive pour un ensemble de roues -->
+    <gazebo>
+        <plugin name="diff_drive_left" filename="libgazebo_ros_diff_drive.so">
+            <!-- Informations sur les roues -->
+            <left_joint>linkarg</left_joint>
+            <right_joint>linkard</right_joint>
+            <wheel_separation>0.35</wheel_separation>
+            <wheel_diameter>0.1</wheel_diameter>
+
+            <!-- Limites -->
+            <max_wheel_torque>200</max_wheel_torque>
+            <max_wheel_acceleration>10.0</max_wheel_acceleration>
+
+            <!-- Sortie -->
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>base_link</robot_base_frame>
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
+        </plugin>
+    </gazebo>
+
+    <!-- Deuxième plugin diff_drive pour l'autre ensemble de roues -->
+    <gazebo>
+        <plugin name="diff_drive_right" filename="libgazebo_ros_diff_drive.so">
+            <!-- Informations sur les roues -->
+            <left_joint>linkavg</left_joint>
+            <right_joint>linkavd</right_joint>
+            <wheel_separation>0.35</wheel_separation>
+            <wheel_diameter>0.1</wheel_diameter>
+
+            <!-- Limites -->
+            <max_wheel_torque>200</max_wheel_torque>
+            <max_wheel_acceleration>10.0</max_wheel_acceleration>
+
+            <!-- Sortie -->
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>base_link</robot_base_frame>
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
+        </plugin>
+    </gazebo>
+
+</robot>

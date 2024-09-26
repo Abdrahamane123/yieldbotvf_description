@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<robot name="yieldbotvf" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="R�volution 7_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="R�volution 7">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="R�volution 7_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="R�volution 8_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="R�volution 8">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="R�volution 8_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="R�volution 9_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="R�volution 9">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="R�volution 9_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="R�volution 10_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="R�volution 10">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="R�volution 10_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>
