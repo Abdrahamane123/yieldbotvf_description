@@ -47,6 +47,11 @@
 
     <gazebo>
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+            <parameters>$(find yieldbotvf_description)/config/my_controllers1.yaml</parameters>
+        </plugin>
+    </gazebo>
+    <gazebo>
+        <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
             <parameters>$(find yieldbotvf_description)/config/my_controllers.yaml</parameters>
         </plugin>
     </gazebo>
