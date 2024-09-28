@@ -29,6 +29,22 @@
   </collision>
 </link>
 
+<link name="base_footprint">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.01 0.01 0.01"/>  <!-- Optionally, you can define a small box -->
+    </geometry>
+    <material name="blue"/>
+  </visual>
+</link>
+
+<joint name="base_link_to_base_footprint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="base_footprint"/>
+</joint>
+
 <link name="roue_avd_1">
   <inertial>
     <origin xyz="-4.736948390204887e-07 -0.007596076970803334 1.7481683353692823e-07" rpy="0 0 0"/>
