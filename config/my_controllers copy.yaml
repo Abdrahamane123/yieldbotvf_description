@@ -13,8 +13,8 @@ diff_cont:
   ros__parameters:
     publish_rate: 50.0
     base_frame_id: base_link
-    left_wheel_names: ["linkarg"]
-    right_wheel_names: ["linkard"]
+    left_wheel_names: ["linkavg"]
+    right_wheel_names: ["linkavd"]
     wheel_separation: 0.35
     wheel_radius: 0.05
     odom_frame_id: odom
