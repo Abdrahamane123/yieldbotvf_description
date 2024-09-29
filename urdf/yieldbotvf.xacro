@@ -4,10 +4,15 @@
 <xacro:include filename="$(find yieldbotvf_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find yieldbotvf_description)/urdf/yieldbotvf.trans" />
 <xacro:include filename="$(find yieldbotvf_description)/urdf/yieldbotvf.gazebo" />
-<!--<xacro:include filename="$(find yieldbotvf_description)/urdf/gazebo_control.xacro" />-->
-<xacro:include filename="$(find yieldbotvf_description)/urdf/ros2_control.xacro" />
 <xacro:include filename="$(find yieldbotvf_description)/urdf/lidar.xacro" />
-
+<xacro:arg name="use_ros2_control" default="true"/>
+<xacro:arg name="sim_mode" default="false"/>
+<xacro:if value="$(arg use_ros2_control)">
+    <xacro:include filename="$(find yieldbotvf_description)/urdf/ros2_control.xacro" />
+</xacro:if>
+<xacro:unless value="$(arg use_ros2_control)">
+    <xacro:include filename="$(find yieldbotvf_description)/urdf/gazebo_control.xacro" />
+</xacro:unless>
 <link name="base_link">
   <inertial>
     <origin xyz="0.06645340709536898 -0.0443735531813499 0.16081823359659522" rpy="0 0 0"/>
