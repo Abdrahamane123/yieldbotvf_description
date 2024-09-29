@@ -10,7 +10,6 @@ from ament_index_python.packages import get_package_share_directory
 from launch.actions import RegisterEventHandler
 from launch.event_handlers import OnProcessExit
 from launch.substitutions import Command
-from launch.actions import RegisterEventHandler
 from launch.event_handlers import OnProcessStart
 
 
@@ -27,10 +26,10 @@ def generate_launch_description():
         executable='robot_state_publisher',
         name='robot_state_publisher',
         parameters=[
-            {'robot_description': robot_urdf}
-        ], launch_arguments={
-            'use_sime_time': 'true', 'use_ros2_control': 'true'
-        }.items()
+            {'robot_description': robot_urdf},
+            {'use_sim_time': True},
+            {'use_ros2_control': True}
+        ]
     )
 
     robot_description = Command(['ros2 param get --hide-type /robot_state_publisher robot_description'])
