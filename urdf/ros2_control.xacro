@@ -6,9 +6,19 @@
             <hardware>
                 <plugin>diffdrive_arduino/DiffDriveArduino</plugin>
                 <param name="left_wheel_name">linkavg</param>
-                <param name="right_wheel_name">linkard</param>
+                <param name="right_wheel_name">linkavd</param>
                 <param name="loop_rate">30</param>
                 <param name="device">/dev/ttyACM0</param>
+                <param name="baud_rate">57600</param>
+                <param name="timeout">1000</param>
+                <param name="enc_counts_per_rev">3436</param>            
+            </hardware>
+            <hardware>
+                <plugin>diffdrive_arduino/DiffDriveArduino</plugin>
+                <param name="left_wheel_name">linkarg</param>
+                <param name="right_wheel_name">linkard</param>
+                <param name="loop_rate">30</param>
+                <param name="device">/dev/ttyACM1</param>
                 <param name="baud_rate">57600</param>
                 <param name="timeout">1000</param>
                 <param name="enc_counts_per_rev">3436</param>            
