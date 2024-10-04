@@ -4,7 +4,7 @@
     <xacro:unless value="$(arg sim_mode)">
         <ros2_control name="RealRobot" type="system">
             <hardware>
-                <plugin>diffdrive_arduino/DiffDriveArduino</plugin>
+                <plugin>diffdrive_arduino/DiffDriveArduinoHardware</plugin>
                 <param name="left_wheel_name">linkavg</param>
                 <param name="right_wheel_name">linkavd</param>
                 <param name="loop_rate">30</param>
@@ -14,7 +14,7 @@
                 <param name="enc_counts_per_rev">3436</param>            
             </hardware>
             <hardware>
-                <plugin>diffdrive_arduino/DiffDriveArduino</plugin>
+                <plugin>diffdrive_arduino/DiffDriveArduinoHardware</plugin>
                 <param name="left_wheel_name">linkarg</param>
                 <param name="right_wheel_name">linkard</param>
                 <param name="loop_rate">30</param>
